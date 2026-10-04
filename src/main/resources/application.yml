@@ -1,0 +1,18 @@
+spring:
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 2000ms
+      lettuce:
+        pool:
+          max-active: 16       # Max concurrent connections to Redis
+          max-idle: 8          # Max idle connections kept alive
+          min-idle: 2          # Minimum connections kept alive
+          max-wait: 2000ms     # How long to wait for a connection before failing
+
+app:
+  redis:
+    # 1MB in bytes (1024 * 1024)
+    compression-threshold: 1048576
+    compression-algorithm: ZSTD
